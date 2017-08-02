@@ -61,10 +61,6 @@ nav.navbar>.row{
     max-height: 500px;
 }
 
-#carousel-inner{
-    max-height: 500px;
-}
-
 
 #intro {
     margin-top: -60px;
@@ -108,23 +104,22 @@ nav.navbar>.row{
     text-align: center;
     padding: 50px;
 }
-
-.img-responsive{
-    border: 2px;
-    max-height: 500px;
-    width: 10px;
-    height: 10px;
+.contenedor2 .centro{
+    margin-top: 30px;
 }
-
-.card-deck img{
-    height: 225px;
+.contenedor_carrito .tablita{
+    margin-left: 30px;
+    margin: 30px;
+    margin-top: 30px;
+}
+.contenedor2 .contenedor_politicas .politicas .imagenperrito{
+    height: 300px;
+    width: 500px;
+    margin-top: 30px;
 }
 
 footer{
     background-color: black;
     color: white;
     text-align: center;
-
 }
-{}
-
