@@ -1,0 +1,121 @@
+<nav class="navbar navbar-toggleable-md navbar-light">
+        <div class="row">
+            <div class="col-3 justify-content-center">
+                <a class="navbar-brand" href="#">
+                    <img id="logo" src="{{ asset('public/images/logoInfo.png') }}" alt="Infoviaje">
+                </a>
+            </div>
+            <div class="col-9">
+                <div id="contactos" class="row">
+                    <div class="col-10">
+                        <div class="row justify-content-end">
+                            <button class="btn btn-secondary" data-toggle="modal" data-target="#myModal">Iniciar sesión</button>
+                            <!-- Modal -->
+                            <div class="modal fade" id="myModal">
+                              <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                  <div class="modal-header">
+                                    <h5 class="modal-title">Iniciar sesión</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                      <span aria-hidden="true">&times;</span>
+                                    </button>
+                                  </div>
+                                  <div class="modal-body">
+                                    <form>
+                                      <div class="form-group">
+                                        <label for="formGroupExampleInput">Correo electrónico</label>
+                                        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="e-mail">
+                                      </div>
+                                      <div class="form-group">
+                                        <label for="formGroupExampleInput2">Contraseña</label>
+                                        <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="contraseña">
+                                      </div>
+                                    </form>
+                                  </div>
+                                  <div class="modal-footer">
+                                    <button type="button" class="btn btn-primary">Iniciar sesión</button>
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+
+                            
+                            <button class="btn btn-secondary" data-toggle="modal" data-target="#myModal1">Registrarse</button>
+
+                            <!-- Modal -->
+                            <div class="modal fade" id="myModal1">
+                              <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                  <div class="modal-header">
+                                    <h5 class="modal-title">Registrarse</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                      <span aria-hidden="true">&times;</span>
+                                    </button>
+                                  </div>
+                                  <div class="modal-body">
+                                    <form>
+                                      <div class="form-group">
+                                        <label for="formGroupExampleInput">Correo electrónico</label>
+                                        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="e-mail">
+                                      </div>
+                                      <div class="form-group">
+                                        <label for="formGroupExampleInput2">Contraseña</label>
+                                        <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="contraseña">
+                                      </div>
+                                    </form>
+                                  </div>
+                                  <div class="modal-footer">
+                                    <button type="button" class="btn btn-primary">Listo</button>
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+
+                            <div id="sociales">
+                                <i class="fa fa-cart-plus" aria-hidden="true"></i>
+                            </div>
+                            <button class="btn btn-warning" type="submit" href="carritocompra.html" >Carrito</button>
+                        </div>
+                    </div>
+                    
+                </div>
+
+
+                <div class="row justify-content-end" id="menu-principal " >
+                    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="row justify-content-end" id="menu-principal " >
+                    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                    <ul class="nav nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="index.html">Inicio</a>
+                        </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Accesorios</a>
+
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="accesoriosperrito.html">Perros</a>
+                    <a class="dropdown-item" href="accesoriosgatito.html">Gatos</a>
+                </div>
+                    </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="politicas.html">Como comprar</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="contactanos.html" >Contáctanos</a>
+                </li>
+                    </ul>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </nav>
