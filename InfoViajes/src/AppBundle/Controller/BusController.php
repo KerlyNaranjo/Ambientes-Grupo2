@@ -3,6 +3,7 @@
 namespace AppBundle\Controller;
 
 use AppBundle\Entity\Bus;
+use AppBundle\Entity\Destino;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component\HttpFoundation\Request;
@@ -29,6 +30,26 @@ class BusController extends Controller
         return $this->render('bus/index.html.twig', array(
             'buses' => $buses,
         ));
+    }
+
+    //accion para ver los buses de un destino
+    public function busesAction(Request $request)
+    {
+        //recoge parametros de la url
+        $idDestino = $request->query->get('id');
+
+        $destino = $this->getDoctrine()->getRepository('AppBundle:Destino')->find($idDestino); 
+
+        $horarios = $destino->getHorario();
+
+
+        
+
+        return $this->render('bus/buses.html.twig',array(
+
+            'horario' => $horarios
+
+            ));
     }
 
     /**

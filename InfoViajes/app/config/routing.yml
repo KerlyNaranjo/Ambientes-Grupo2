@@ -4,3 +4,12 @@ app:
 
 fos_user:
     resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+
+
+reserva_inicio:
+    path:     /inicio
+    defaults: { _controller: AppBundle:Reserva:inicio }
+
+bus_buses:
+    path:     /buses
+    defaults: { _controller: AppBundle:Bus:buses }

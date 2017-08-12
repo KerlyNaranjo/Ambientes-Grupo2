@@ -31,6 +31,17 @@ class ReservaController extends Controller
         ));
     }
 
+        public function inicioAction()
+    {
+        $reservas = $this->getDoctrine()->getRepository('AppBundle:Destino')->findAll();
+
+
+        return $this->render('reserva/inicio.html.twig',array(
+            'destinos' => $reservas,
+
+            ));
+    }
+
     /**
      * Creates a new reserva entity.
      *
