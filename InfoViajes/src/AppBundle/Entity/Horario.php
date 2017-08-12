@@ -29,9 +29,9 @@ class Horario
     private $horaSalida;
 
     /**
-     * @ORM\OneToMany(targetEntity="Reserva", mappedBy="horario")
+     * @ORM\OneToMany(targetEntity="Reservas", mappedBy="horario")
      */
-    private $reserva;
+    private $reservas;
     /**
      * @ORM\ManyToOne(targetEntity="Destino", inversedBy="horario")
      * @ORM\JoinColumn(name="destino_id", referencedColumnName="id")
@@ -167,5 +167,15 @@ class Horario
     public function getBus()
     {
         return $this->bus;
+    }
+
+    /**
+     * Get reservas
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getReservas()
+    {
+        return $this->reservas;
     }
 }

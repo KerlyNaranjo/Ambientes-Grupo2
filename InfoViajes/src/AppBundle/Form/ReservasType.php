@@ -7,15 +7,16 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 
-class ReservaType extends AbstractType
+class ReservasType extends AbstractType
 {
     /**
      * {@inheritdoc}
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('numeroAsiento')->add('fechaReserva')
-                ->add('user', EntityType::class, array(
+        $builder->add('numeroAsiento')
+            ->add('fechaReserva')
+            ->add('user', EntityType::class, array(
                 // query choices from this entity
                 'class' => 'AppBundle:User',
                 // use the Category.nombre property as the visible option string
@@ -34,7 +35,7 @@ class ReservaType extends AbstractType
                 },
 
             ))
- 
+
 
         ;
     }
@@ -45,7 +46,7 @@ class ReservaType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'AppBundle\Entity\Reserva'
+            'data_class' => 'AppBundle\Entity\Reservas'
         ));
     }
 
@@ -54,7 +55,7 @@ class ReservaType extends AbstractType
      */
     public function getBlockPrefix()
     {
-        return 'appbundle_reserva';
+        return 'appbundle_reservas';
     }
 
 

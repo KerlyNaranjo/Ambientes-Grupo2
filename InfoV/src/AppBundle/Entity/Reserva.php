@@ -22,6 +22,13 @@ class Reserva
     private $id;
 
     /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="fecha_reserva", type="date")
+     */
+    private $fechaReserva;
+
+    /**
      * @var int
      *
      * @ORM\Column(name="numero_asiento", type="integer")
@@ -29,23 +36,16 @@ class Reserva
     private $numeroAsiento;
 
     /**
-     * @var \String
-     *
-     * @ORM\Column(name="fecha_reserva", type="string")
+     * @ORM\ManyToOne(targetEntity="User", inversedBy="reserva")
+     * @ORM\JoinColumn(name="user_id", referencedColumnName="id")
      */
-    private $fechaReserva;
-
-
-    /**
-    * @ORM\ManyToOne(targetEntity="User", inversedBy="reserva")
-    * @ORM\JoinColumn(name="user_id", referencedColumnName="id")
-    */
     private $user;
     /**
      * @ORM\ManyToOne(targetEntity="Horario", inversedBy="reserva")
      * @ORM\JoinColumn(name="horario_id", referencedColumnName="id")
      */
     private $horario;
+
 
 
     /**
@@ -56,6 +56,30 @@ class Reserva
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * Set fechaReserva
+     *
+     * @param \DateTime $fechaReserva
+     *
+     * @return Reserva
+     */
+    public function setFechaReserva($fechaReserva)
+    {
+        $this->fechaReserva = $fechaReserva;
+
+        return $this;
+    }
+
+    /**
+     * Get fechaReserva
+     *
+     * @return \DateTime
+     */
+    public function getFechaReserva()
+    {
+        return $this->fechaReserva;
     }
 
     /**
@@ -80,30 +104,6 @@ class Reserva
     public function getNumeroAsiento()
     {
         return $this->numeroAsiento;
-    }
-
-    /**
-     * Set fechaReserva
-     *
-     * @param \String $fechaReserva
-     *
-     * @return Reserva
-     */
-    public function setFechaReserva($fechaReserva)
-    {
-        $this->fechaReserva = $fechaReserva;
-
-        return $this;
-    }
-
-    /**
-     * Get fechaReserva
-     *
-     * @return \String
-     */
-    public function getFechaReserva()
-    {
-        return $this->fechaReserva;
     }
 
     /**

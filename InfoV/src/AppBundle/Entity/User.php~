@@ -1,0 +1,60 @@
+<?php
+// src/AppBundle/Entity/User.php
+
+namespace AppBundle\Entity;
+
+use FOS\UserBundle\Model\User as BaseUser;
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * @ORM\Entity
+ * @ORM\Table(name="usuario")
+ */
+class User extends BaseUser
+{
+    /**
+     * @ORM\Id
+     * @ORM\Column(type="integer")
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    protected $id;
+
+    /**
+     * @ORM\Column(type="string", length=30)
+     */
+    protected $nombre;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="apellido", type="string", length=30)
+     */
+    private $apellido;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="cedula", type="string", length=10, nullable=true, unique=true)
+     */
+    private $cedula;
+
+
+    /**
+     * @var bool
+     *
+     * @ORM\Column(name="discapacidad", type="boolean")
+     */
+    private $discapacidad;
+
+
+    /**
+     * @ORM\OneToMany(targetEntity="Reserva", mappedBy="user")
+     */
+    private $reserva;
+
+    public function __construct()
+    {
+        parent::__construct();
+        // your own logic
+    }
+}

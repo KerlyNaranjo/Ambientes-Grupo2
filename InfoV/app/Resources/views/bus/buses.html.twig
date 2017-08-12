@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <h1>Destinos list</h1>
+    <table>
+        <thead>
+        <tr>
+            <th>Hora</th>
+            <th>Cooperativa</th>
+            <th>Matricula bus</th>
+            <th>Accion</th>
+        </tr>
+
+        </thead>
+        <tbody>
+
+        {% for horarios in horario %}
+        <tr>
+            <td>
+                {% if horarios.horaSalida  %}
+                    {{ horarios.horaSalida|date('H:i:s') }}
+
+                {% endif %}
+
+            </td>
+            <td>{{ horarios.bus.cooperativa.nombreCooperativa}}
+            </td>
+            <td>{{ horarios.bus.matriculaBus}}</td>
+            <td><a href="#">Seleccionar</a></td>
+
+
+
+
+            {% endfor %}
+        </tr>
+        </tbody>
+    </table>
+
+
+
+
+
+
+
+
+{% endblock %}

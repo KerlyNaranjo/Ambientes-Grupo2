@@ -28,10 +28,11 @@ class Horario
      */
     private $horaSalida;
 
+
     /**
-     * @ORM\OneToMany(targetEntity="Reservas", mappedBy="horario")
+     * @ORM\OneToMany(targetEntity="Reserva", mappedBy="horario")
      */
-    private $reservas;
+    private $reserva;
     /**
      * @ORM\ManyToOne(targetEntity="Destino", inversedBy="horario")
      * @ORM\JoinColumn(name="destino_id", referencedColumnName="id")
@@ -43,9 +44,9 @@ class Horario
      * @ORM\JoinColumn(name="bus_id", referencedColumnName="id")
      */
     private $bus;
-
-
-
+    
+    
+    
     /**
      * Get id
      *

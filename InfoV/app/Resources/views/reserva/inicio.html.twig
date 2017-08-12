@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <h1>Destinos list</h1>
+
+    <table>
+        <thead>
+        <tr>
+            <th>Destino</th>
+            <th>Precio</th>
+            <th>Tiempo viaje</th>
+            <th></th>
+        </tr>
+
+
+        </thead>
+        <tbody>
+        {% for des in destinos %}
+            <tr>
+                <td>{{ des.lugarDestino }}</td>
+                <td>{{ des.precioDestino }}</td>
+                <td>{{ des.tiempoDestino }}</td>
+                <!--
+                El path es el definido en el routing.yml
+                -->
+                <td><a href="{{ path('bus_buses', {'id': des.id} )  }}">Seleccionar</a></td>
+
+            </tr>
+
+        {% endfor %}
+
+
+        </tbody>
+    </table>
+
+
+
+    <select>
+
+        {% for des in destinos %}
+            <option>{{ des.lugarDestino }}</option>
+        {% endfor %}
+    </select>
+
+
+{% endblock %}

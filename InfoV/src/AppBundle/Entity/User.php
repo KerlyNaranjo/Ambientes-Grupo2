@@ -19,7 +19,7 @@ class User extends BaseUser
      */
     protected $id;
 
-     /**
+    /**
      * @ORM\Column(type="string", length=30)
      */
     protected $nombre;
@@ -48,9 +48,9 @@ class User extends BaseUser
 
 
     /**
-     * @ORM\OneToMany(targetEntity="Reservas", mappedBy="user")
+     * @ORM\OneToMany(targetEntity="Reserva", mappedBy="user")
      */
-    private $reservas;
+    private $reserva;
 
     public function __construct()
     {

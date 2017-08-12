@@ -48,9 +48,9 @@ class User extends BaseUser
 
 
     /**
-     * @ORM\OneToMany(targetEntity="Reserva", mappedBy="user")
+     * @ORM\OneToMany(targetEntity="Reservas", mappedBy="user")
      */
-    private $reserva;
+    private $reservas;
 
     public function __construct()
     {
@@ -186,5 +186,15 @@ class User extends BaseUser
     public function getReserva()
     {
         return $this->reserva;
+    }
+
+    /**
+     * Get reservas
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getReservas()
+    {
+        return $this->reservas;
     }
 }

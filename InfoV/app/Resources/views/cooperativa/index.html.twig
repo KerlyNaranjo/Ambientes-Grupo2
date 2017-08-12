@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Cooperativas list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nombrecooperativa</th>
+                <th>Ruccooperativa</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for cooperativa in cooperativas %}
+            <tr>
+                <td><a href="{{ path('cooperativa_show', { 'id': cooperativa.id }) }}">{{ cooperativa.id }}</a></td>
+                <td>{{ cooperativa.nombreCooperativa }}</td>
+                <td>{{ cooperativa.rucCooperativa }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('cooperativa_show', { 'id': cooperativa.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('cooperativa_edit', { 'id': cooperativa.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('cooperativa_new') }}">Create a new cooperativa</a>
+        </li>
+    </ul>
+{% endblock %}

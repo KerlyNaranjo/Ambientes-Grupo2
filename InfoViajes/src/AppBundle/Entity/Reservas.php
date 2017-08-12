@@ -5,12 +5,12 @@ namespace AppBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Reserva
+ * Reservas
  *
- * @ORM\Table(name="reserva")
- * @ORM\Entity(repositoryClass="AppBundle\Repository\ReservaRepository")
+ * @ORM\Table(name="reservas")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\ReservasRepository")
  */
-class Reserva
+class Reservas
 {
     /**
      * @var int
@@ -37,16 +37,15 @@ class Reserva
 
 
     /**
-    * @ORM\ManyToOne(targetEntity="User", inversedBy="reserva")
-    * @ORM\JoinColumn(name="user_id", referencedColumnName="id")
-    */
+     * @ORM\ManyToOne(targetEntity="User", inversedBy="reservas")
+     * @ORM\JoinColumn(name="user_id", referencedColumnName="id")
+     */
     private $user;
     /**
-     * @ORM\ManyToOne(targetEntity="Horario", inversedBy="reserva")
+     * @ORM\ManyToOne(targetEntity="Horario", inversedBy="reservas")
      * @ORM\JoinColumn(name="horario_id", referencedColumnName="id")
      */
     private $horario;
-
 
     /**
      * Get id
@@ -63,7 +62,7 @@ class Reserva
      *
      * @param integer $numeroAsiento
      *
-     * @return Reserva
+     * @return Reservas
      */
     public function setNumeroAsiento($numeroAsiento)
     {
@@ -87,7 +86,7 @@ class Reserva
      *
      * @param \DateTime $fechaReserva
      *
-     * @return Reserva
+     * @return Reservas
      */
     public function setFechaReserva($fechaReserva)
     {
@@ -111,7 +110,7 @@ class Reserva
      *
      * @param \AppBundle\Entity\User $user
      *
-     * @return Reserva
+     * @return Reservas
      */
     public function setUser(\AppBundle\Entity\User $user = null)
     {
@@ -135,7 +134,7 @@ class Reserva
      *
      * @param \AppBundle\Entity\Horario $horario
      *
-     * @return Reserva
+     * @return Reservas
      */
     public function setHorario(\AppBundle\Entity\Horario $horario = null)
     {

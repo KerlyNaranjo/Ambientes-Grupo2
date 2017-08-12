@@ -10,12 +10,12 @@
                 <td>{{ reserva.id }}</td>
             </tr>
             <tr>
-                <th>Numeroasiento</th>
-                <td>{{ reserva.numeroAsiento }}</td>
-            </tr>
-            <tr>
                 <th>Fechareserva</th>
                 <td>{% if reserva.fechaReserva %}{{ reserva.fechaReserva|date('Y-m-d') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Numeroasiento</th>
+                <td>{{ reserva.numeroAsiento }}</td>
             </tr>
         </tbody>
     </table>
