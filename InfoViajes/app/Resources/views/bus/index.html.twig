@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Buses list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Matriculabus</th>
+                <th>Capacidadbus</th>
+                <th>Descripcionbus</th>
+                <th>Choferbus</th>
+                <th>Ayudantebus</th>
+                <th>Isactive</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for bus in buses %}
+            <tr>
+                <td><a href="{{ path('bus_show', { 'id': bus.id }) }}">{{ bus.id }}</a></td>
+                <td>{{ bus.matriculaBus }}</td>
+                <td>{{ bus.capacidadBus }}</td>
+                <td>{{ bus.descripcionBus }}</td>
+                <td>{{ bus.choferBus }}</td>
+                <td>{{ bus.ayudanteBus }}</td>
+                <td>{% if bus.isActive %}Yes{% else %}No{% endif %}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('bus_show', { 'id': bus.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('bus_edit', { 'id': bus.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('bus_new') }}">Create a new bus</a>
+        </li>
+    </ul>
+{% endblock %}
