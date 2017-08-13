@@ -105,4 +105,52 @@ class Reserva
     {
         return $this->numeroAsiento;
     }
+
+    /**
+     * Set user
+     *
+     * @param \AppBundle\Entity\User $user
+     *
+     * @return Reserva
+     */
+    public function setUser(\AppBundle\Entity\User $user = null)
+    {
+        $this->user = $user;
+
+        return $this;
+    }
+
+    /**
+     * Get user
+     *
+     * @return \AppBundle\Entity\User
+     */
+    public function getUser()
+    {
+        return $this->user;
+    }
+
+    /**
+     * Set horario
+     *
+     * @param \AppBundle\Entity\Horario $horario
+     *
+     * @return Reserva
+     */
+    public function setHorario(\AppBundle\Entity\Horario $horario = null)
+    {
+        $this->horario = $horario;
+
+        return $this;
+    }
+
+    /**
+     * Get horario
+     *
+     * @return \AppBundle\Entity\Horario
+     */
+    public function getHorario()
+    {
+        return $this->horario;
+    }
 }

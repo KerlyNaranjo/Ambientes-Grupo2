@@ -7,6 +7,7 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
+use Symfony\Component\Form\Extension\Core\Type\TimeType;
 
 class ReservaType extends AbstractType
 {
@@ -16,8 +17,8 @@ class ReservaType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('fechaReserva')
 
+            ->add('fechaReserva', DateType::class)
 
             ->add('numeroAsiento')
 
@@ -33,16 +34,18 @@ class ReservaType extends AbstractType
 
             ))
 
+
+
             ->add('horario', EntityType::class, array(
                 // query choices from this entity
                 'class' => 'AppBundle:Horario',
                 // use the Category.nombre property as the visible option string
                 'choice_label' => function ($horario) {
-                    return $horario->getHoraSalida();
+                    return $horario->getId();
                 },
 
+
             ))
-        
         ;
     }
     
