@@ -24,6 +24,11 @@
                 <li role="presentation" ><a href="{{ asset('/inicio') }}">Inicio</a></li>
                 <li role="presentation" ><a href="#">Quienes somos</a></li>
                 <li role="presentation" ><a href="#">Contáctanos</a></li>
+                {% if is_granted("ROLE_ADMIN") %}
+                <li role="presentation" ><a href="{{ path('cooperativa_index') }}">Cooperativa</a></li>
+                <li role="presentation" ><a href="{{ path('destino_index') }}">Destino</a></li>
+                {% endif%}
+
                     <li><div id="sociales">
                             <a href=""><i class="fa fa-facebook" aria-hidden="true"></i></a>
                             <a href=""><i class="fa fa-twitter" aria-hidden="true"></i></a>
