@@ -10,6 +10,8 @@
                 <th>Numasientos</th>
                 <th>Fecha</th>
                 <th>Actions</th>
+                <th>Horario</th>
+                <th>Destino</th>
             </tr>
         </thead>
         <tbody>
@@ -18,6 +20,8 @@
                 <td><a href="{{ path('reserva_show', { 'id': reserva.id }) }}">{{ reserva.id }}</a></td>
                 <td>{{ reserva.numAsientos }}</td>
                 <td>{{ reserva.fecha }}</td>
+                <td>{{ reserva.horario.horaSalida }}</td>
+                <td>{{ reserva.horario.destino.nomDestino }}</td>
                 <td>
                     <ul>
                         <li>
@@ -38,4 +42,5 @@
             <a href="{{ path('reserva_new') }}">Create a new reserva</a>
         </li>
     </ul>
+
 {% endblock %}

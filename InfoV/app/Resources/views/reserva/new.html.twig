@@ -1,7 +1,14 @@
-{% extends 'base.html.twig' %}
+{% extends 'menu.html.twig' %}
+
+{% block title %}Infoviajes{% endblock %}
 
 {% block body %}
-    <h1>Reserva creation</h1>
+    {{ parent() }}
+<div class="container">
+    <div class="cold-md-12">
+        <div class="page-header margin-none">
+            <h1>Crear reverva</h1>
+        </div>
 
     {{ form_start(form) }}
         {{ form_widget(form) }}

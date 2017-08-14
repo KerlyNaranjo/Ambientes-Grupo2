@@ -15,7 +15,9 @@ class ReservaType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder->add('numAsientos')->add('fecha')
-            
+
+            //->add('horario', TextType::class, array('label'=>'Horario'))
+
             ->add('usuario', EntityType::class, array(
                 // query choices from this entity
                 'class' => 'AppBundle:Usuario',
@@ -35,6 +37,16 @@ class ReservaType extends AbstractType
                 },
 
             ))
+
+            /*->add('horario', EntityType::class, array(
+                // query choices from this entity
+                'class' => 'AppBundle:Horario',
+                // use the Category.nombre property as the visible option string
+                'choice_label' => function ($destino) {
+                    return $destino->getDestino();
+                },
+
+            ))*/
         
         
         ;
