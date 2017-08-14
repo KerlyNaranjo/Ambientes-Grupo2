@@ -47,6 +47,19 @@ class ReservaController extends Controller
      */
     public function newAction(Request $request)
     {
+        //Recoger el id que se envio desde los buses metodo GET
+        $var=$request->query->get("id");
+        //recupero la entidad horario con el id enviado
+        $horario = $this->getDoctrine()
+            ->getRepository('AppBundle:Horario')
+            ->find($var);
+        //recupero el usuario logeado
+        $idUser = $this->get('security.token_storage')->getToken()->getUser()->getId();
+        //recupero la entidad usuario
+        $user = $this->getDoctrine()
+            ->getRepository('AppBundle:User')
+            ->find($idUser);
+
         $reserva = new Reserva();
         $form = $this->createForm('AppBundle\Form\ReservaType', $reserva);
         $form->handleRequest($request);
@@ -62,6 +75,8 @@ class ReservaController extends Controller
         return $this->render('reserva/new.html.twig', array(
             'reserva' => $reserva,
             'form' => $form->createView(),
+            'horario'=>$horario,
+            'idUser'=>$user,
         ));
     }
 
