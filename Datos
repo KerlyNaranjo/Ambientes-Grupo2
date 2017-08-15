@@ -1,0 +1,235 @@
+*****************COOPERATIVA*****************
+
+INSERT INTO `cooperativa` (`id`, `nombre_cooperativa`, `ruc_cooperativa`) VALUES
+(1, 'Reina del camino', '1234567892001'),
+(2, 'Aerotaxi', '7896541236001'),
+(3, 'Baños', '1742589632141'),
+(4, 'Aloag', '17123654789001'),
+(5, 'Amazonas', '1778965412001'),
+(6, 'Aerotaxi', '1725896314001'),
+(7, '14 de Octubre', '1778965412001'),
+(8, 'Caluma', '1713647985001'),
+(9, 'Canario', '1719734682001'),
+(10, 'Carlos Aray', '1712378965001'),
+(11, 'Centinela', '1771396852001'),
+(12, 'Cevallos', '1702589631001'),
+(13, 'Chimborazo', '1774102589001'),
+(14, 'Ciro', '1737512980001'),
+(15, 'Cita express', '1714597863001'),
+(16, 'Coatur', '1712398540001'),
+(17, 'Colta', '1719654220001'),
+(18, 'Condorazo', '1778966554001'),
+(19, 'Cotopaxi', '1777889966001'),
+(20, 'Ecuador', '1702331144001');
+(21, 'Otavalo', '1704587956201'),
+(22, 'Amazonas', '1705632148901'),
+(23, 'Mana', '1702331144001'),
+(24, 'Andina', '1705684789601'),
+(25, 'America', '1704586321201'),
+(26, 'Baños', '1704578965801'),
+(27, 'Caluma', '1704521236801'),
+(28, 'Chimborazo', '1745879965201'),
+(29, 'Turismo', '172365478101'),
+(30, 'Dorado', '171246897501'),
+(31, 'Condor', '17457896531'),
+(32, 'Interandina', '174578965401')
+
+
+
+************************ BUS **********************
+
+INSERT INTO `bus` (`id`, `cooperativa_id`, `matricula_bus`, `capacidad_bus`, `descripcion_bus`, `chofer_bus`, `ayudante_bus`, `is_active`) VALUES
+(1, 1, 'ASD-123', 20, 'Climatizado', 'Andres', 'Hugo', 1),
+(2, 1, 'MNB-789', 60, 'Climatizado', 'Elber', 'Carlos', 1),
+(3, 2, 'WER-456', 70, 'Climatizado', 'Cristian', 'Geovany', 1),
+(4, 2, 'TYU-147', 60, 'Climatizado', 'Jacinto', 'Javier', 1),
+(5, 3, 'ASD-258', 75, 'Climatizado', 'William', 'Fermando', 1),
+(6, 3, 'DFG-633', 60, 'Climatizado', 'Patricio', 'Javier', 1),
+(7, 4, 'GHJ-963', 20, 'Climatizado', 'Eduardo', 'Josue', 1),
+(8, 4, 'KLÑ-852', 50, 'Climatizado', 'Edison', 'Kevin', 1),
+(9, 5, 'QWE-741', 70, 'Climatizado', 'Diego', 'Marlon', 1),
+(10, 5, 'ERT-254', 30, 'Climatizado', 'Dario', 'Henry', 0),
+(11, 6, 'TYU-025', 70, 'Climatizado', 'Hugo', 'Vicente', 1),
+(12, 6, 'YUI-410', 30, 'Climatizado', 'Manuel', 'Pedro', 1),
+(13, 7, 'UIO-630', 60, 'Climatizado', 'Alexis', 'Daniel', 1),
+(14, 7, 'IOP-851', 65, 'Climatizado', 'Alex', 'Luis', 1),
+(15, 8, 'IÑL-481', 62, 'Climatizado', 'Jose', 'Favian', 1),
+(16, 8, 'ZXC-103', 70, 'Climatizado', 'Bryan', 'Luis', 1),
+(17, 9, 'XCV-753', 70, 'Climatizado', 'Israel', 'Jonny', 1),
+(18, 9, 'CVB-115', 80, 'Climatizado', 'Camilo', 'Pablo', 1),
+(19, 10, 'VBN-951', 20, 'Climatizado', 'Marcelo', 'Hernan', 1),
+(20, 10, 'BNM-455', 40, 'Climatizado', 'Juan', 'Jorge', 1),
+(21, 11, 'WSX-112', 60, 'Climatizado', 'Jefferson', 'Guillermo', 1),
+(22, 11, 'RFV-223', 70, 'Climatizado', 'Ton', 'Stalyn', 1),
+(23, 12, 'LMJ-851', 40, 'Climatizado', 'Javier', 'Steven', 1),
+(24, 13, 'YTR-789', 60, 'Climatizado', 'Gabriel', 'Fer', 1),
+(25, 14, 'POY-079', 70, 'Climatizado', 'Marcelo', 'Victor', 1),
+(26, 15, 'WRY-085', 40, 'Climatizado', 'Kevin', 'Francisco', 1),
+(27, 16, 'PVC-960', 60, 'Climatizado', 'Alexander', 'Camilo', 1),
+(28, 17, 'TON-850', 70, 'Climatizado', 'Diego', 'Saúl', 1),
+(29, 18, 'PCZ-450', 40, 'Climatizado', 'Elman', 'Dian', 0),
+(30, 19, 'ALP-028', 60, 'Climatizado', 'Joel', 'Michael', 1),
+(31, 20, 'QPO-963', 70, 'Climatizado', 'Dean', 'Cesar', 1)
+(32,21, 'QER-475', 40, 'Climatizado', 'Juan', 'Jorge', 1),
+
+(33,24, 'QUI-786', 60, 'Climatizado', 'Juaquin', 'Alex', 1),
+(34, 23, 'RTG-986', 70, 'Climatizado', 'Marcelo', 'Juan', 1),
+(35, 25, 'LOJ-786', 40, 'Climatizado', 'john', 'Andres', 1),
+(36, 26, 'YUR-717', 60, 'Climatizado', 'Gabriel', 'Fernando', 1),
+(37,27, 'UIO-437', 40, 'Climatizado', 'Edison', 'Luis', 1),
+(38, 28, 'GUO-120', 70, 'Climatizado', 'Ricardo', 'Jose', 1),
+(39,29, 'QOP-478', 40, 'Climatizado', 'Lenin', 'Saul', 1),
+(40, 30, 'PUO-987', 60, 'Climatizado', 'Alejandro', 'Dayan', 1),
+(41, 31, 'RTE-125', 70, 'Climatizado', 'Jefferson', 'Dennis', 1),
+(42, 32, 'TYJ-245', 40, 'Climatizado', 'Victor', 'Hugo', 0),
+(43, 1, 'OTY-133', 60, 'Climatizado', 'Fabricio', 'Byron', 1),
+(44, 2, 'CYT-785', 70, 'Climatizado', 'Nelson', 'Dario ', 1)
+
+;
+
+************************ DESTINO ***********************
+INSERT INTO `destino` (`id`, `lugar_destino`, `tiempo_destino`, `precio_destino`) VALUES
+(1, 'Quevedo', '1h 20min', '2.20'),
+(2, 'Cuenca', '3h 30min', '7.20'),
+(3, 'Guayaquil', '7h 30min', '3.20'),
+(4, 'Ambato', '4h 30min', '4.20'),
+(5, 'Puyo', '1h 20min', '5.20'),
+(6, 'Esmeraldas', '2h 40min', '6.20'),
+(7, 'Atacames', '3h 50min', '7.20'),
+(8, 'St. Domingo', '4h 60min', '8.20'),
+(9, 'Tena', '5h 50min', '9.20'),
+(10, 'Riobamba', '7h 60min', '10.25'),
+(11, 'Coca', '7h 10min', '10.20'),
+(12, 'Lago Agrio', '8h 20min', '7.30'),
+(13, 'Manta', '9h 20min', '6.20'),
+(14, 'Portoviejo', '3h 30min', '5.25'),
+(15, 'Tulcan', '4h 40min', '4.20'),
+(16, 'Guaranda', '5h 40min', '3.25'),
+(17, 'Sigchos', '6h 45min', '2.50'),
+(18, 'Salinas', '7h 25min', '4.50'),
+(19, 'Macas', '8h 35min', '5.50'),
+(20, 'Loja', '2h 40min', '6.20');
+
+************************ HORARIOS ***********************
+
+INSERT INTO `horario` (`id`, `destino_id`, `bus_id`, `hora_salida`) VALUES
+(1, 1, 1, '03:00:00'),
+(2, 2, 2, '02:00:00'),
+(3, 3, 3, '03:00:00'),
+(4, 4, 4, '04:00:00'),
+(5, 5, 5, '05:00:00'),
+(6, 6, 6, '06:00:00'),
+(7, 7, 7, '07:00:00'),
+(8, 8, 8, '08:00:00'),
+(9, 9, 9, '09:00:00'),
+(10,10, 10, '10:00:00'),
+(11, 11, 11, '11:00:00'),
+(12, 12, 12, '12:00:00'),
+(13, 13, 13, '13:00:00'),
+(14, 14, 14, '14:00:00'),
+(15, 15, 15, '15:00:00'),
+(16, 16, 16, '16:00:00'),
+(17, 17, 17, '01:00:00'),
+(18, 18, 18, '02:00:00'),
+(19, 19, 19, '03:00:00'),
+(20, 20, 20, '04:00:00'),
+(21, 1, 21, '05:00:00'),
+(22, 2, 22, '06:00:00'),
+(23, 3, 23, '07:00:00');
+
+
+
+********** mision.html.twig ***********
+{% extends 'base.html.twig' %}
+{% block body %}
+    {{ include('menu.html.twig') }}
+
+    <div class="container">
+    <div class="jumbotron">
+        <h1>Misión</h1>
+        <p>It is a long established fact that a reader will be distracted by the readable content of a
+            page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal
+            distribution of
+            letters, as opposed to using 'Content here, content here', making it look like readable English.</p>
+        <!--<p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>-->
+    </div>
+
+    <br>
+
+    <div class="jumbotron">
+        <h1>Visión</h1>
+        <p>Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text,
+            and a search for 'lorem ipsum' will uncover many web sites still in their infancy.
+            Various versions have evolved over the years, sometimes by accident, sometimes on purpose
+            (injected humour and the like).</p>
+        <!--<p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>-->
+    </div>
+        </div>
+
+{% endblock %}
+
+
+************** defaultcontroller ************
+
+public function misionAction(Request $request)
+    {
+        // replace this example code with whatever you need
+        return $this->render('default/mision.html.twig', array(
+
+        ));
+    }
+
+*********** routing.yml *******
+default_mision:
+    path:     /mision
+    defaults: { _controller: AppBundle:Default:mision }
+
+
+********* inicio inicio ********
+{% extends 'menu.html.twig' %}
+
+{# Modal ver include para añadir otro twig#}
+{% block title %}Infoviajes{% endblock %}
+
+{% block body %}
+{{ parent() }}
+<div class="container">
+
+
+
+                <br><br>
+
+        <div class="jumbotron">
+            <h1>Bienvenido!</h1>
+            <p >Infoviajes es it is a long established fact that a reader will be distracted by the readable
+                content of a page when looking at its layout. 
+                The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters</p>
+            <p id="abc"><a class="btn btn-primary btn-lg" href="{{ asset('/login') }}" role="button">Inicia sesión</a></p>
+        </div>
+
+            <footer>
+                {% block footer %}
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-8 text-white">
+                                <p><strong>Infoviajes</strong> Copyright: © 2017. Todos los derechos reservados.</p>
+                            </div>
+                            <div class="col-4" id="sociales">
+                                <a href=""><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                                <a href=""><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                                <a href=""><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                {% endblock %}
+            </footer>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+
+
+
+
+
