@@ -3,6 +3,7 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Destino
@@ -24,6 +25,17 @@ class Destino
     /**
      * @var string
      *
+     * @Assert\Regex(
+     *     pattern="/\d/",
+     *     match=false,
+     *     message="No se aceptan numeros"
+     * )
+     * @Assert\Length(
+     *      min = 4,
+     *      max = 70,
+     *      minMessage = "Tu nombre debe tener al menos {{ limit }} letras",
+     *      maxMessage = "Tu nombre no puede ser mayor a {{ limit }} letras"
+     * )
      * @ORM\Column(name="lugar_destino", type="string", length=70, unique=true)
      */
     private $lugarDestino;
@@ -38,6 +50,12 @@ class Destino
     /**
      * @var string
      *
+     * @Assert\Range(
+     *      min = 2,
+     *      max = 30,
+     *      minMessage = "Precio debe ser al menos {{ limit }} dolares",
+     *      maxMessage = "Precio no puedes ser más alto que {{ limit }}dolares"
+     * )
      * @ORM\Column(name="precio_destino", type="decimal", precision=10, scale=2)
      */
     private $precioDestino;

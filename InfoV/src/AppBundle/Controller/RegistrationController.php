@@ -52,7 +52,7 @@ class RegistrationController extends BaseController
                 );
 
                 if (null === $response = $event->getResponse()) {
-                    $url = $this->generateUrl('fos_user_security_login');
+                    $url = $this->generateUrl('reserva_inicio');
                     $response = new RedirectResponse($url);
                 }
 

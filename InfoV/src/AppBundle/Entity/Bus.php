@@ -26,6 +26,12 @@ class Bus
     /**
      * @var string
      *
+     * @Assert\Length(
+     *      min = 7,
+     *      max = 8,
+     *      minMessage = "La matricula debe tener al menos {{ limit }} caracteres",
+     *      maxMessage = "La matricula no puede ser mayor a {{ limit }} caracteres"
+     * )
      * @ORM\Column(name="matricula_bus", type="string", length=10, unique=true)
      */
     private $matriculaBus;
@@ -34,12 +40,11 @@ class Bus
      * @var int
      * 
      * @Assert\Range(
-     *      min = 40,
-     *      max = 75,
-     *      minMessage = "Debes ser al menos {{ limit }} personas",
-     *      maxMessage = "No puedes ser más alto que {{ limit }} personas"
+     *      min = 30,
+     *      max = 70,
+     *      minMessage = "No puede tener una capacidad menos de {{ limit }} personas",
+     *      maxMessage = "No puede tener una capacidad mas de  {{ limit }} personas"
      * )
-
      * @ORM\Column(name="capacidad_bus", type="integer")
      */
     private $capacidadBus;
@@ -66,6 +71,11 @@ class Bus
     /**
      * @var string
      *
+     * @Assert\Regex(
+     *     pattern="/\d/",
+     *     match=false,
+     *     message="No se aceptan numeros"
+     * )
      * @ORM\Column(name="ayudante_bus", type="string", length=70)
      */
     private $ayudanteBus;

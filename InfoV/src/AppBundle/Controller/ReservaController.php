@@ -6,6 +6,7 @@ use AppBundle\Entity\Reserva;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 
 /**
  * Reserva controller.
@@ -88,6 +89,11 @@ class ReservaController extends Controller
      */
     public function showAction(Reserva $reserva)
     {
+                /**
+        Aqui restringimos solo a esta accion 
+        */
+        $this->denyAccessUnlessGranted('ROLE_ADMIN');
+
         $deleteForm = $this->createDeleteForm($reserva);
 
         return $this->render('reserva/show.html.twig', array(
@@ -104,6 +110,11 @@ class ReservaController extends Controller
      */
     public function editAction(Request $request, Reserva $reserva)
     {
+                /**
+        Aqui restringimos solo a esta accion 
+        */
+        $this->denyAccessUnlessGranted('ROLE_ADMIN');
+        
         $deleteForm = $this->createDeleteForm($reserva);
         $editForm = $this->createForm('AppBundle\Form\ReservaType', $reserva);
         $editForm->handleRequest($request);

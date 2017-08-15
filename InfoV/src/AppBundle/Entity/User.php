@@ -5,6 +5,7 @@ namespace AppBundle\Entity;
 
 use FOS\UserBundle\Model\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity
@@ -20,6 +21,11 @@ class User extends BaseUser
     protected $id;
 
     /**
+     * @Assert\Regex(
+     *     pattern="/\d/",
+     *     match=false,
+     *     message="No se acepta numeros"
+     * )
      * @ORM\Column(type="string", length=30)
      */
     protected $nombre;
@@ -27,6 +33,11 @@ class User extends BaseUser
     /**
      * @var string
      *
+     * @Assert\Regex(
+     *     pattern="/\d/",
+     *     match=false,
+     *     message="No se acepta numeros"
+     * )
      * @ORM\Column(name="apellido", type="string", length=30)
      */
     private $apellido;
@@ -34,6 +45,16 @@ class User extends BaseUser
     /**
      * @var string
      *
+     * @Assert\Type(
+     *     type="integer",
+     *     message="El valor  no es del {{ type }} válido."
+     * )
+     * @Assert\Length(
+     *      min = 10,
+     *      max = 10,
+     *      minMessage = "Tu ID debe tener al menos {{ limit }} numeros",
+     *      maxMessage = "Tu ID no puede ser mayor a {{ limit }} numeros"
+     * )
      * @ORM\Column(name="cedula", type="string", length=10, nullable=true, unique=true)
      */
     private $cedula;

@@ -3,6 +3,7 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Cooperativa
@@ -24,6 +25,12 @@ class Cooperativa
     /**
      * @var string
      *
+     * @Assert\Length(
+     *      min = 4,
+     *      max = 100,
+     *      minMessage = "Nombre debe tener al menos {{ limit }} caracteres",
+     *      maxMessage = "Nombre no puede ser mayor a {{ limit }} caracteres"
+     * )
      * @ORM\Column(name="nombre_cooperativa", type="string", length=100, unique=true)
      */
     private $nombreCooperativa;
@@ -31,6 +38,16 @@ class Cooperativa
     /**
      * @var string
      *
+     * @Assert\Type(
+     *     type="integer",
+     *     message="El valor  no es del {{ type }} válido."
+     * )
+     * @Assert\Length(
+     *      min = 12,
+     *      max = 14,
+     *      minMessage = "Tu RUC debe tener al menos {{ limit }} numeros",
+     *      maxMessage = "Tu RUC no puede ser mayor a {{ limit }} numeros"
+     * )
      * @ORM\Column(name="ruc_cooperativa", type="string", length=13, unique=true)
      */
     private $rucCooperativa;
