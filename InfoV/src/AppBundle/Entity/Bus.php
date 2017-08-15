@@ -3,6 +3,8 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+
 
 /**
  * Bus
@@ -30,7 +32,14 @@ class Bus
 
     /**
      * @var int
-     *
+     * 
+     * @Assert\Range(
+     *      min = 40,
+     *      max = 75,
+     *      minMessage = "Debes ser al menos {{ limit }} personas",
+     *      maxMessage = "No puedes ser más alto que {{ limit }} personas"
+     * )
+
      * @ORM\Column(name="capacidad_bus", type="integer")
      */
     private $capacidadBus;
@@ -44,7 +53,12 @@ class Bus
 
     /**
      * @var string
-     *
+     * 
+     * @Assert\Regex(
+     *     pattern="/\d/",
+     *     match=false,
+     *     message="No se acepta numeros"
+     * )
      * @ORM\Column(name="chofer_bus", type="string", length=70)
      */
     private $choferBus;

@@ -36,5 +36,5 @@ security:
         - { path: ^/cooperativa/, role: ROLE_ADMIN }
         - { path: ^/destino/, role: ROLE_ADMIN }
         - { path: ^/horario/, role: ROLE_ADMIN }
-        - { path: ^/reserva/, role: ROLE_ADMIN }
+#        - { path: ^/reserva/, role: ROLE_ADMIN }
 
